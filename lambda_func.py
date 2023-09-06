@@ -468,7 +468,6 @@ def lambda_handler(event, context):
                 return generateResponse(200, json.dumps({"body": responses}))
             name = data["value"]
             authLevel = data["authLevel"]
-            # TODO - this might be vulnerable to SQLi
             try:
                 if authLevel == "200":
                     exec_statement = (
